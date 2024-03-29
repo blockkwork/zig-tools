@@ -1,0 +1,80 @@
+{
+  "name": "zig-tools",
+  "displayName": "Zig tools",
+  "description": "⚡ Zig tools for vscode",
+  "icon": "images/icon.png",
+  "publisher": "bwork",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blockkwork/zig-tools"
+  },
+  "bugs": {
+    "url": "https://github.com/blockkwork/zig-tools/issues"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Snippets",
+    "Linters",
+    "Other"
+  ],
+  "keywords": [
+    "zig",
+    "zls",
+    "zig formatter",
+    "zig snippets",
+    "zig linter",
+    "tools"
+  ],
+  "activationEvents": [
+    "onLanguage:zig"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "properties": {
+        "zig-tools.type hints": {
+          "type": "boolean",
+          "default": true,
+          "description": "Data type hints (ranges) on hover"
+        },
+        "zig-tools.type autocompletion": {
+          "type": "boolean",
+          "default": true,
+          "description": "Data type autocompletion"
+        },
+        "zig-tools.bitwise operation hints": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Bitwise operation hints on hover (hover over the bitwise binary operator). Example:\n\n```zig\nconst _ = 2 << 10\nconst _ = 2 ^ 4\n```"
+        },
+        "zig-tools.hex hints": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Converts a number from hexadecimal to decimal system. Hover over the number in hex system. Example: \n\n```zig\nconst _ = 0xf // hint: 15\n```"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.87.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
