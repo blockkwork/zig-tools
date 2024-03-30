@@ -1,6 +1,6 @@
 # Zig tools
 <p align="center">
-<img src="images/icon.svg" width="300">
+<img src="images/readme_icon.png" width="300">
 </p>
 
 
