@@ -11,7 +11,7 @@
 
 
 ## ⚡ Features
-### Data type hints on rover
+### Data type hints on hover
 ![screencast](images/demo1.gif)
 
 ### Bitwise operation hints on hover
